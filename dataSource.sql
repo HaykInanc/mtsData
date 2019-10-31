@@ -47,7 +47,7 @@ create table dataSource2 (
 );
 
 
-insert into personsData2 (first_name, last_name, email, gender) 
+insert into dataSource2 (first_name, last_name, email, gender) 
 	values  
 	('Rosita',                  'McGing',               'rmcging5@nps.gov 89235428443',                   'Female'),                        
 	('Elinor',                  'Barca',                'ebarca54@ning.com 89022338843',                  'Female'),                        
