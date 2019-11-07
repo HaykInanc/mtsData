@@ -50,8 +50,8 @@ create table dataSource2 (
 insert into dataSource2 (first_name, last_name, email, gender) 
 	values  
 	('Rosita',                  'McGing',               'rmcging5@nps.gov 89235428443',                   'Female'),                        
-	('Elinor',                  'Barca',                'ebarca54@ning.com 89022338843',                  'Female'),                        
+	('Elinor',                  'Barca',                'ebarca54@gmail.com 89022338843',                  'Female'),                        
 	('Paxon',                   'Rimington',            '89094235643',                   				  'Male'),                        
-	('Truda',                   'Biffin',               'tbiffin89@wired.com',                            'F'),                        
-	('Noland',                  'Buesden',              '893265432 85',                                   'Male'),                                           
-	('Brana Champion',           null,                  'bchampiondv@csmonitor.com',                      'Female');
+	('Truda',                   'Biffin',               'tbiffin81@wired.com 89096450730',                            'F'),                        
+	('Noland',                  'Buesden',              '893265432 56',                                   'Male'),                                           
+	('Brana Champion',           null,                  'CBrana@csmonitor.com',                      'Female');
