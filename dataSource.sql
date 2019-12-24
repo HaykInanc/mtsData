@@ -76,6 +76,9 @@ create table personsData (
 );
 
 
+
+drop table if exists dataSource01;
+create table dataSource01 as 
 select 
 case 
 	when instr(lower(gender), 'f') = 0
@@ -87,7 +90,7 @@ end as gender,
 	  when instr(email, '@') = 0 then null
 	  when instr(email, ' ') = 0 then email
 	  when instr(email, ' ') <> 0 
-	  	then substr(email, 1 , instr(email, ' '))
+	  	then substr(email, 0 , instr(email, ' '))
   end as email,
 
   case 
@@ -95,5 +98,21 @@ end as gender,
 	when instr(email, ' ') = 0 then null
 	when instr(email, ' ') <> 0
 		then replace(substr(email, instr(email, ' ')), ' ', '')
-  end as phone
-from dataSource
+  end as phone,
+
+  case
+	when instr(first_name, ' ')
+		then substr(first_name, 0, instr(first_name, ' '))
+	when first_name is null
+		then substr(last_name, 0, instr(last_name, ' '))
+	else first_name
+end as first_name,
+
+case
+	when instr(last_name, ' ')
+		then substr(last_name, instr(last_name, ' ')+1)
+	when last_name is null
+		then substr(first_name, instr(first_name, ' ')+1)
+	else last_name
+end as last_name
+from dataSource;
