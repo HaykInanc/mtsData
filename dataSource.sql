@@ -74,3 +74,12 @@ create table personsData (
 	gender varchar(255),
 	created_at datetime default current_timestamp
 );
+
+
+select 
+case 
+	when instr(lower(gender), 'f') = 0
+		then 'male'
+		else 'female'
+end as gender
+from dataSource
