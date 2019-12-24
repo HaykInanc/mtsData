@@ -81,5 +81,19 @@ case
 	when instr(lower(gender), 'f') = 0
 		then 'male'
 		else 'female'
-end as gender
+end as gender,
+
+  case
+	  when instr(email, '@') = 0 then null
+	  when instr(email, ' ') = 0 then email
+	  when instr(email, ' ') <> 0 
+	  	then substr(email, 1 , instr(email, ' '))
+  end as email,
+
+  case 
+  	when instr(email, '@') = 0 then replace(email, ' ', '')
+	when instr(email, ' ') = 0 then null
+	when instr(email, ' ') <> 0
+		then replace(substr(email, instr(email, ' ')), ' ', '')
+  end as phone
 from dataSource
