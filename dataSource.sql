@@ -55,3 +55,22 @@ insert into dataSource2 (first_name, last_name, email, gender)
 	('Truda',                   'Biffin',               'tbiffin81@wired.com 89096450730',                            'F'),                        
 	('Noland',                  'Buesden',              '893265432 56',                                   'Male'),                                           
 	('Brana Champion',           null,                  'CBrana@csmonitor.com',                      'Female');
+
+
+
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+
+
+drop table if exists personsData;
+create table personsData (
+	id integer primary key autoincrement,
+	first_name varchar(255),
+	last_name varchar(255),
+	email varchar(255),
+	phone varchar(255),
+	gender varchar(255),
+	created_at datetime default current_timestamp
+);
